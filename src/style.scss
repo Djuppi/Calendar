@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+  }
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+.selected {
+  background-color: rgba(123, 202, 211, 0.435);
+}
+  
+.header {
+  display: grid !important;
+  grid-template-columns: repeat(3, auto);
+  width: 25%;
+  margin: 0 auto;
+  padding: 1.75em;
+  .month {
+    min-width: 117px;
+    text-align: center;
+  }
+  .arrow {
+    margin: 0 5px;
+  }
+  .week {
+    min-width: 61px; 
+  }
+}
+
+.body {
+  display: block;
+  grid-template-columns: 1fr 20px 800px 1fr;
+  // width: 800px;
+  margin: 0 auto;
+  padding-right: 8px;
+
+  .long {
+    margin-left: -9px;
+  }
+}
+  
+  
+  
+  .disabled {
+    color: rgba(69, 69, 69, 0.394);
+    background-color: rgba(177, 177, 177, 0.415);
+  }
+  
+  .thisDay {
+    font-weight: 600;
+    background-color: rgba(123, 202, 211, 0.299);
+  }
+  
+  .day {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .daysRow {
+    display: flex;
+    justify-content: center;
+  }
+  .dayName {
+    width: 100px;
+    border: 1px solid black;
+    text-align: center;
+  }
+  
+  .calender {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    background: var(--neutral-color);
+    border: 1px solid var(--border-color);
+  }
+  
+  .col {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    &:hover {
+        background-color: rgba(123, 202, 211, 0.435);
+    }
+  }
+  
+  .day {
+    width: 100px;
+    height: 80px;
+    border: 1px solid grey;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .days {
+    position: relative;
+    
+  }
+  
+
+
+  .weekend {
+    color: red !important;
+  }
+
+  .popUp {
+    
+  }
+
+  .hiddenPopUp {
+    visibility: hidden;
+  }
+
+  .visiblePopUp {
+    visibility: visible;
+    width: 150px;
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    border-top: .5px solid black;
+  }
+
+  .date {
+    margin: 0 10px 10px 0;
+  }
+
+  .eventcontainer {
+    position: absolute;
+    margin: 15px auto;
+  }
+
+  .event {
+    position: relative;
+    margin: 5px;
+    font-size: 0.8rem;
+    background-color: rgba(123, 202, 211, 0.435);
+    width: 90%;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(123, 202, 211, 1);
+    }
+  }
+
+  .selectedEvent {
+    background-color: rgba(123, 202, 211, 1);
+  }
+
+  .hey {
+    background-color: red;
+  }
+
+//Weekview ->
+
+.weekView {
+  width: 200px;
+  border: none;
+}
+
+.week {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  .col {
+    display: flex;
+    border: 1px dotted grey;
+    width: 200px;
+    justify-content: flex-end;
+    .day {
+      width: fit-content;
+      height: 800px;
+      margin: 0;
+    }
+    
+  }
+}
+
+.monthTitle {
+  width: fit-content;
+  margin: 0 auto;
+}
+
