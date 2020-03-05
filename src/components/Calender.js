@@ -35,7 +35,7 @@ function Calender(props) {
             const allEvents = await getAllEvents()
             setEvents(allEvents)
         })();
-    }, [])
+    }, [currentDate])
 
 
     function renderHeader() {
@@ -138,7 +138,6 @@ function Calender(props) {
             for (let i =0; i<7; i++) {
                 formattedDate = format(day, dateFormat);
                 const cloneDay = day;
-                
                 const event = events.map((booking) => isSameDay(new Date(booking.startdate), cloneDay) ? 
                     <div className={`event ${isSameDay(new Date(SelectedEvent.startdate), new Date(booking.startdate)) ? "selectedEvent" : null}`} onClick={(event) => handleEventClick(booking.name, booking.startdate, event)}>
                     <span id={booking.id}>{booking.name}</span>
