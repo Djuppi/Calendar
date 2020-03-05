@@ -6,12 +6,10 @@ const jwt = require('jsonwebtoken');
 const { cryptPassword, checkPassword } = require('./middlewares/bcrypt')
 
 const pool = new Pool({
-    user: 'me',
-    host: 'localhost',
-    database: 'calendar',
-    password: 'Nirvana60',
-    port: '3003',
+    connectionString: process.env.DATABASE_URL
 })
+
+const secret = process.env.SECRET
 
 const app = express();
 
@@ -82,7 +80,7 @@ app.post('/login', async (req, res) => {
             id: user.userid,
             color: user.color,
             name: user.name
-        }, new Buffer('FiskerTrollen', 'base64'))
+        }, new Buffer(secret, 'base64'))
 
         res.send({
             token: token
@@ -123,7 +121,7 @@ app.post('/signup', async (req, res) => {
 })
 
 
-const port = 3333
+const port = process.env.PORT
 app.listen(port, () => {
     console.log(`Planner-app is running at http://localhost:${port}`)
 })
